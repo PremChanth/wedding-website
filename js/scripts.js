@@ -166,14 +166,17 @@ $(document).ready(function () {
 
 
     /********************** Toggle Map Content **********************/
-    $('#btn-show-map').click(function () {
-        $('#map-content').toggleClass('toggle-map-content');
-        $('#btn-show-content').toggleClass('toggle-map-content');
+    $('#btn-show-map').click(function (e) {
+        // $('#map-content').toggleClass('toggle-map-content');
+        // $('#btn-show-content').toggleClass('toggle-map-content');
+        console.log('ininin');
+        e.preventDefault();
+        window.open('https://goo.gl/maps/j7o7yrQZcazNYcVt6', '_blank')
     });
-    $('#btn-show-content').click(function () {
-        $('#map-content').toggleClass('toggle-map-content');
-        $('#btn-show-content').toggleClass('toggle-map-content');
-    });
+    // $('#btn-show-content').click(function () {
+    //     $('#map-content').toggleClass('toggle-map-content');
+    //     $('#btn-show-content').toggleClass('toggle-map-content');
+    // });
 
     /********************** Add to Calendar **********************/
     var myCalendar = createCalendar({
