@@ -93,25 +93,25 @@ $(document).ready(function () {
                 $('section.navigation').addClass('fixed');
                 $('header').css({
                     "border-bottom": "none",
-                    "padding": "35px 0"
+                    "padding": "20px 0"
                 });
                 $('header .member-actions').css({
-                    "top": "26px",
+                    "top": "20px",
                 });
                 $('header .navicon').css({
-                    "top": "34px",
+                    "top": "9px",
                 });
             } else {
                 $('section.navigation').removeClass('fixed');
                 $('header').css({
                     "border-bottom": "solid 1px rgba(255, 255, 255, 0.2)",
-                    "padding": "50px 0"
+                    "padding": "20px 0"
                 });
                 $('header .member-actions').css({
-                    "top": "41px",
+                    "top": "20px",
                 });
                 $('header .navicon').css({
-                    "top": "48px",
+                    "top": "8px",
                 });
             }
         });
@@ -167,16 +167,16 @@ $(document).ready(function () {
 
     /********************** Toggle Map Content **********************/
     $('#btn-show-map').click(function (e) {
-        // $('#map-content').toggleClass('toggle-map-content');
-        // $('#btn-show-content').toggleClass('toggle-map-content');
+        $('#map-content').toggleClass('toggle-map-content');
+        $('#btn-show-content').toggleClass('toggle-map-content');
         console.log('ininin');
-        e.preventDefault();
-        window.open('https://goo.gl/maps/j7o7yrQZcazNYcVt6', '_blank')
+        // e.preventDefault();
+        // window.open('https://goo.gl/maps/j7o7yrQZcazNYcVt6', '_blank')
     });
-    // $('#btn-show-content').click(function () {
-    //     $('#map-content').toggleClass('toggle-map-content');
-    //     $('#btn-show-content').toggleClass('toggle-map-content');
-    // });
+    $('#btn-show-content').click(function () {
+        $('#map-content').toggleClass('toggle-map-content');
+        $('#btn-show-content').toggleClass('toggle-map-content');
+    });
 
     /********************** Add to Calendar **********************/
     var myCalendar = createCalendar({
@@ -494,3 +494,30 @@ var MD5 = function (string) {
 
     return temp.toLowerCase();
 };
+// Set the date we're counting down to
+var countDownDate = new Date("Nov 15, 2021 00:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60  * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="demo"
+    document.getElementById("time").innerHTML = "<div class='container'><div class='days block'>"+ days + "<br>Days</div>" + "<div class='hours block'>" + hours + "<br>Hours</div>" + "<div class='minutes block'>" + minutes + "<br>Minutes</div>" + "<div class='seconds block'>" + seconds + "<br>Seconds</div></div>";
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("time").innerHTML = "Bless the married couple for happy life!";
+    }
+}, 1000);
