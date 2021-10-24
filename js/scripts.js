@@ -1,6 +1,6 @@
 $(document).ready(function () {
-
     /***************** Waypoints ******************/
+    setInterval(countdownFn,1000);
 
     $('.wp1').waypoint(function () {
         $('.wp1').addClass('animated fadeInLeft');
@@ -169,7 +169,7 @@ $(document).ready(function () {
     $('#btn-show-map').click(function (e) {
         $('#map-content').toggleClass('toggle-map-content');
         $('#btn-show-content').toggleClass('toggle-map-content');
-        console.log('ininin');
+        // // console.log('ininin');
         // e.preventDefault();
         // window.open('https://goo.gl/maps/j7o7yrQZcazNYcVt6', '_blank')
     });
@@ -258,7 +258,7 @@ function initMap() {
 }
 
 function initBBSRMap() {
-    var la_fiesta = {lat: 20.305826, lng: 85.85480189999998};
+    var la_fiesta = {lat: 10.663000200121026, lng: 77.01481830395744};
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 15,
         center: la_fiesta,
@@ -494,12 +494,14 @@ var MD5 = function (string) {
 
     return temp.toLowerCase();
 };
+
+
 // Set the date we're counting down to
 var countDownDate = new Date("Nov 15, 2021 00:00:00").getTime();
 
 // Update the count down every 1 second
-var x = setInterval(function() {
-
+function countdownFn() {
+    console.log('ininin -> ')
     // Get todays date and time
     var now = new Date().getTime();
     
@@ -507,17 +509,19 @@ var x = setInterval(function() {
     var distance = countDownDate - now;
     
     // Time calculations for days, hours, minutes and seconds
-    var days = Math.floor(distance / (1000 * 60  * 60 * 24));
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
     // Output the result in an element with id="demo"
-    document.getElementById("time").innerHTML = "<div class='container'><div class='days block'>"+ days + "<br>Days</div>" + "<div class='hours block'>" + hours + "<br>Hours</div>" + "<div class='minutes block'>" + minutes + "<br>Minutes</div>" + "<div class='seconds block'>" + seconds + "<br>Seconds</div></div>";
+    document.getElementById("time").innerHTML = "<div class='container' style='display:flex;justify-content: center;'><div class='days block text-design' style='margin-right:15px'>"+ days + " Days</div>" + "<div class='hours block text-design' style='margin-right:15px'>" + hours + " Hours</div>" + "<div class='minutes block text-design' style='margin-right:15px'>" + minutes + " Minutes</div>" + "<div class='seconds block text-design' style='margin-right:15px'>" + seconds + " Seconds</div></div>";
     
     // If the count down is over, write some text 
     if (distance < 0) {
         clearInterval(x);
         document.getElementById("time").innerHTML = "Bless the married couple for happy life!";
     }
-}, 1000);
+};
+
+// "<div class='container' style='display:flex;justify-content: center;'><div class='days block text-design' style='margin-right:15px'>"+ days + " Days</div>" + "<div class='hours block text-design' style='margin-right:15px'>" + hours + " Hours</div>" + "<div class='minutes block text-design' style='margin-right:15px'>" + minutes + " Minutes</div>" + "<div class='seconds block text-design' style='margin-right:15px'>" + seconds + " Seconds</div></div>";

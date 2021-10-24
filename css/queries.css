@@ -8,6 +8,7 @@
         display: inline-block;
         width: 70%;
     }
+  
 
 }
 
@@ -250,6 +251,7 @@
     footer .footer-links {
         margin: 120px 0 120px 0;
     }
+
 }
 
 @media screen and (max-width: 640px) {
