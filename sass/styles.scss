@@ -37,7 +37,7 @@ a:hover, a:focus {
   text-decoration: none;
 }
 body {
-  font-family: $sans-serif;
+  font-family: cursive;
   font-weight: $light;
   color: $txt-primary;
   -webkit-text-size-adjust: 100%;
@@ -580,7 +580,7 @@ Features-stack
   .time {
     font-size: 13px;
     font-style: italic;
-    text-transform: lowercase;
+    text-transform: capitalize;
     color: $txt-primary;
   }
 }

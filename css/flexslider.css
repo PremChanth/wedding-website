@@ -255,6 +255,30 @@ html[xmlns] .flexslider .slides {
   opacity: 1;
   cursor: default;
 }
+@keyframes blink {
+  0% { color: red; }
+  100% { color: black; }
+  
+}
+@-webkit-keyframes blink {
+  0% { color: red; }
+  100% { color: black; }
+
+  
+}
+.blink {
+  -webkit-animation: blink 1s linear infinite;
+  -moz-animation: blink 1s linear infinite;
+  animation: blink 1s linear infinite;
+} 
+.text-design{
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(55,36,40,0.88);
+  margin-bottom: 15px;
+  margin-top: 12px;
+}
+
 
 /* ====================================================================================================================
  * RESPONSIVE
@@ -266,29 +290,5 @@ html[xmlns] .flexslider .slides {
   .flex-direction-nav .flex-next {
     display: none;
   }
-  .text-design{
-    /* margin-right: 15px;  */
-    font-size: 16px;
-    font-weight: 600;
-    color: black;
-    /* text-shadow: 0 0 30px #0a5480; */
-    margin-bottom: 15px;
-    margin-top: 12px;
-
-  }
 }
 
-@media screen and (min-width:870px) and (max-width:2000px) {
-
-  .text-design{
-    margin-right: 15px;
-    font-size: 28px;
-font-weight: 600;
-    color: azure;
-   text-shadow: 0 0 30px #0a5480;
-   margin-bottom: 15px;
-    margin-top: 12px;
-}
-
-  
-}
